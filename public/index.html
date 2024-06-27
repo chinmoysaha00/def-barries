@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Generate PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>PDF Generator</h1>
+    <form id="pdfForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Generate PDF</button>
+    </form>
+    <script>
+
+        document.getElementById('pdfForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const htmlContent = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Dynamic PDF</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+                        html { -webkit-print-color-adjust: exact;}
+                        
+                    </style>
+                </head>
+                <body>
+        <div style="display: flex; justify-content:center; align-items:center; padding:4em 2em 6em 2em">
+        <div>
+            <p style="font-size:23px; color: #484948; ">QUOTATION ISSUED</p>
+            <p style="font-size:16px; color: #ee6f30; text-align:right; margin-top:-10px;">11/03/2024</p>
+        </div>
+        <div style="display: flex; flex-direction: column; width: 3px; height: 75px; margin: 0 30px;">
+            <div style="background-color: #da2127; height: 20%;"></div>
+            <div style="background-color: #e1432a; height: 20%;"></div>
+            <div style="background-color: #ee6f30; height: 20%;"></div>
+            <div style="background-color: #f78c2a; height: 20%;"></div>
+            <div style="background-color: #faad1a; height: 20%;"></div>
+        </div>
+        <div>
+            <p style="font-size:23px; color: #484948; ">QUOTATION VALID TO</p>
+            <p style="font-size:16px; color: #ee6f30; text-align:left; margin-top:-10px;">19/03/2024</p>
+        </div>
+        </div>
+    <div style="display: flex; justify-content: end; align-items:center;">
+        <div style="width: 80%; height: 15px; display: flex;">
+            <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+            <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+            <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+        </div>
+    </div>
+    <div style="background-color: #749cd2; padding: 1em 4em 10em 4em">
+        <p
+            style="letter-spacing:1rem; text-align: right; color: white; font-weight: 600; font-size: 4.3rem; margin-top: 25px;">
+            SOLAR PV</p>
+        <p style="letter-spacing:1rem; text-align: right; color: white; font-size: 4.5rem; margin-top: -40px;">
+            QUOTE</p>
+    </div>
+    <div style="display: flex; justify-content:end; align-items:center; padding:30px">
+        <div style="text-align: center; color: #484948;">
+            <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="logo" style="height: 3em; width: 5em;">
+        </div>
+        <div style="display: flex; flex-direction: column; width: 2px; height: 65px; margin: 0 30px;">
+            <div style="background-color: #da2127; height: 20%;"></div>
+            <div style="background-color: #e1432a; height: 20%;"></div>
+            <div style="background-color: #ee6f30; height: 20%;"></div>
+            <div style="background-color: #f78c2a; height: 20%;"></div>
+            <div style="background-color: #faad1a; height: 20%;"></div>
+        </div>
+        <div style="text-align: center; color: #484948;">
+            <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="logo" style="height: 3em; width: 5em;">
+        </div>
+    </div>
+    <div style="text-align: right; padding-right:30px; margin-top:-10px">
+        <p style="color: #484948; font-size: 1.2em; font-weight:600; letter-spacing:0.2rem; margin-bottom:-15px;">
+            PREPARED BY</p>
+        <p style="color: #484948; font-size: 1.2em; font-weight:600; letter-spacing:0.1rem; font-family:cursive;">
+            Johanna Nolan</p>
+    </div>
+    <div style="text-align: right; padding-right:30px; padding-top:2px">
+        <p style="color: #484948; font-size: 1.2em; font-weight:600; letter-spacing: 0.2rem; margin-bottom:-15px;">
+            PREPARED FOR</p>
+        <p
+            style="color: #484948; font-size: 1.2em; font-weight:600; letter-spacing:0.1rem; font-family:sans-serif; color:#ee6f30">
+            Pat McKeown</p>
+    </div>
+    <div style="display: flex; justify-content: end; align-items:center; padding-top:80px">
+        <div style="width: 100%; height: 10px; display: flex;">
+            <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+            <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+            <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content:space-between; align-items:center; padding: 20px 70px 40px 70px ">
+        <p style="font-siZe: 3.3em;font-weight:600; letter-spacing:0.05em; color:#a3a4a3">
+            ABOUT US</p>
+        <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="logo" style="height: 5em; width: 5em; margin-right:3em ">
+    </div>
+    <p
+        style="text-align: right; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15rem; color: red; margin-top:-5em; padding-right:60px">
+        Ireland's Solar Experts
+    </p>
+    <div
+        style="background-color:#5384c7; display:flex; justify-content:space-between; align-items:start; padding: 40px 50px">
+        <div style="width: 50%;">
+            <div style="display: flex; color:#cfd9ec;">
+                <div style="margin-top:-25px">
+                    <p style="font-size:3rem;">01</p>
+                </div>
+                <div style="padding: 0px 20px;">
+                    <p style="font-size: 1.5rem;">Who we are?</p>
+                    <p style="font-size: 1rem; margin-top:-10px">
+                        Founded in 2007, we have over 16 years experience supplying solar panels across Ireland. As a
+                        partner of SSE Airtricity, you know your solar system is in safe hands. Now and into the future.
+                        As Ireland's solar experts, we will always be here for you.</p>
+                </div>
+            </div>
+            <div>
+                <div style="width: 90%; height: 8px;">
+                    <div style="width: 20%; height: 100%; float: left; background-color: #da2127;"></div>
+                    <div style="width: 20%; height: 100%; float: left; background-color: #e1432a;"></div>
+                    <div style="width: 20%; height: 100%; float: left; background-color: #ee6f30;"></div>
+                    <div style="width: 20%; height: 100%; float: left; background-color: #f78c2a;"></div>
+                    <div style="width: 20%; height: 100%; float: left; background-color: #faad1a;"></div>
+                </div>
+            </div>
+            <div style="display: flex; color:#cfd9ec;">
+                <div style="margin-top:-25px">
+                    <p style="font-size:3rem;">02</p>
+                </div>
+                <div style="padding: 0px 20px;">
+                    <p style="font-size: 1.5rem;">What we do?</p>
+                    <p style="font-size: 1rem; margin-top:-10px">
+                        We install solar PV systems for homeowners all over Ireland. We also install solar for some of
+                        Ireland's leading companies and institutions including Microsoft, Intel, HSE, Johnson & Johnson,
+                        Musgraves along with utility scale solar projects up to 10,000 panels at a time.</p>
+                </div>
+            </div>
+            <div>
+                <div style="width: 90%; height: 8px;">
+                    <div style="width: 20%; height: 100%; float: left; background-color: #da2127;"></div>
+                    <div style="width: 20%; height: 100%; float: left; background-color: #e1432a;"></div>
+                    <div style="width: 20%; height: 100%; float: left; background-color: #ee6f30;"></div>
+                    <div style="width: 20%; height: 100%; float: left; background-color: #f78c2a;"></div>
+                    <div style="width: 20%; height: 100%; float: left; background-color: #faad1a;"></div>
+                </div>
+            </div>
+            <div style="display: flex; color:#cfd9ec;">
+                <div style="margin-top:-25px">
+                    <p style="font-size:3rem;">03</p>
+                </div>
+                <div style="padding: 0px 20px;">
+                    <p style="font-size: 1.5rem;">How we do it?</p>
+                    <p style="font-size: 1rem; margin-top:-10px">
+                        Two of our six Core Values are Quality & Safety and they are at the heart of everything we do.
+                        This is reflected in our ISO 9001 (Quality), 140001 (Environment) and 45001 (Health & Safety)
+                        accreditations and our recent 100% Achilles audit.</p>
+                </div>
+            </div>
+        </div>
+        <div style="  width:45%">
+            <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="Image" style="width: 18em; height: 18em; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); margin-top:5em">
+            <div style="text-align: center; ">
+                <h1 style="color: #7394cc;font-size:1.3rem; letter-spacing:0.2rem; margin-bottom:0;">Ciaran
+                    Marron
+                </h1>
+                <p style="color: #ffffff; font-size:0.9rem; letter-spacing:0.2rem; margin-top:8px;">CEO & Founder
+                </p>
+            </div>
+            <div style=" color: white; padding:15px 2px 0px 15px">
+                <p style="font-size: 0.8rem; letter-spacing:0.05rem;">An electrician by trade and degree in
+                    Engineering, our CEO Ciaran Marron has always driven the company as an engineering-lead
+                    enterprise. Focusing on technical expertise, quality of service and delivery of high quality
+                    products.</p>
+                <p style="font-size: 0.9rem; letter-spacing:0.05rem;">That is just the same now as it was in
+                    2007.
+                    From day one, Ciaran's motto has been;</p>
+                <p style="font-size: 1rem; font-weight:600; letter-spacing:0.02rem;">“We don't meet
+                    standards, we
+                    set them”</p>
+            </div>
+        </div>
+    </div>
+    <div style="padding:20px 80px">
+        <a href="https://www.youtube.com/watch?v=Bv4w6cw_02Y" style="text-decoration: none;">
+            <div
+                style="background-color: #ed7030; color: #ffffff; padding: 10px 0px; text-align: center; width: 300px; border-radius: 20px;">
+                <h5 style="margin: 0;">"Who We Are"</h5>
+                <p style="margin: 0 0;">Click here to watch video</p>
+            </div>
+        </a>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items:center; padding: 0px 50px">
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <div style="width: 30em; height: 8px; display: flex;">
+                <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+                <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+                <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+                <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+                <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content:right;">
+            <div style="text-align: center; color: #484948; margin-right: 30px;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 4em;">
+            </div>
+            <div style="display: flex; flex-direction: column; width: 4px; height: 40px; margin-right: 30px;">
+                <div style="background-color: #da2127; height: 20%;"></div>
+                <div style="background-color: #e1432a; height: 20%;"></div>
+                <div style="background-color: #ee6f30; height: 20%;"></div>
+                <div style="background-color: #f78c2a; height: 20%;"></div>
+                <div style="background-color: #faad1a; height: 20%;"></div>
+            </div>
+            <div style="text-align: center; color: #484948;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 4em;">
+            </div>
+        </div>
+    </div>
+<div style="padding-top:25px;">
+        <h1 style="text-transform: uppercase; font-size:4rem;color:#a3a4a3; margin-left:2em; margin-bottom:10px">
+            Quote
+        </h1>
+    </div>
+    <div style="margin-left: 70px;">
+        <div style="width: 70%; height: 8px; display: flex;">
+            <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+            <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+            <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+        </div>
+    </div>
+    <div style="display: flex; padding: 10px 0px 10px 75px; align-items:center">
+        <p>Issued:</p>
+        <p style="margin:0px 5px 0px 10px; color:#ee6f30;">11/03/2024</p>
+        <div style="margin:0px 10px;height: 2px; width: 20px; background-color:#a3a4a3"></div>
+        <p>Valid to:</p>
+        <p style="margin:0px 5px 0px 10px; color:#ee6f30;">19/03/2024</p>
+    </div>
+    <div style="background-color: #85a9db;">
+        <div style="display: flex; justify-content: center; width: 100%;">
+            <div
+                style="background-color: white; padding:20px 50px 0px 50px; text-align: left; max-width: 700px; width: 70%; font-size:13px">
+                <p style="margin: 7px 0; ">A8 No: 273906</p>
+                <p style="margin: 7px 0; ">Name: Pat Mckeown</p>
+                <p style="margin: 7px 0; ">Address: Greenmount Castlebellingham Louth</p>
+                <p style="margin: 7px 0; ">Eircode: A91RT21</p>
+                <p style="margin: 7px 0; ">Phone: 0872546561</p>
+                <p style="margin: 7px 0; ">Email: pat@ffsolutions.ie</p>
+                <p style="margin: 7px 0; ">MRPN: gfdgdsg</p>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; width: 100%;">
+            <div
+                style="width: 70%; max-width: 700px; background-color: white; padding:0px 50px 20px 50px; font-size:13px">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th colspan="4"
+                                style="padding: 10px; border-bottom: 1px solid black; background-color: white ; color: #ef6e31; text-align: center;">
+                                System Details
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black; white-space: nowrap;">400W
+                                QCell Panels</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">18</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">System size:</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"> 7.2kWp</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">Solis Inverter</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">1</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">Performance estimate:</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">5885.44kWhr/year</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px 10px; ">Mounting Type</td>
+                            <td style="padding:5px 10px; ">Slate</td>
+                            <td style="padding:5px 10px; ">Battery:</td>
+                            <td style="padding:5px 10px; ">Pure drive 5kWhr</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th colspan="4"
+                                style="padding: 10px; border-bottom: 1px solid black; background-color: white; color: #ef6e31; text-align: left;">
+                                Additional Solar Items</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 5px 10px; border-bottom: 1px solid black;">Grant</td>
+                            <td style="padding: 5px 10px; border-bottom: 1px solid black;"><input type="checkbox"
+                                    checked style="pointer-events: none;"></td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">Flat Roof Add-On</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox"
+                                    style="pointer-events: none;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">BER</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox" checked
+                                    style="pointer-events: none;"></td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black; white-space: nowrap;">
+                                Ground Mount System</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox"
+                                    style="pointer-events: none;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black; white-space: nowrap;">Eddi
+                                Hot
+                                Water Divert</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox" checked
+                                    style="pointer-events: none;"></td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black; white-space: nowrap;">
+                                Relocate
+                                Panels on Roof</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox"
+                                    style="pointer-events: none;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">WiFi Monitoring</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox" checked
+                                    style="pointer-events: none;"></td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">Immersion Addition</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox"
+                                    style="pointer-events: none;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">East-West Add-On</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox" checked
+                                    style="pointer-events: none;"></td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black; white-space: nowrap;">
+                                Standard
+                                Cylinder Change</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox"
+                                    style="pointer-events: none;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">NC6 Submission</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox" checked
+                                    style="pointer-events: none;"></td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">Stainless Steel Upgrade
+                            </td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox"
+                                    style="pointer-events: none;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">Battery Ready</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox"
+                                    style="pointer-events: none;"></td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">Cable Run(m)</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox"
+                                    style="pointer-events: none;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">Multi System Offer</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox"
+                                    style="pointer-events: none;"></td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">SEAI Account Registration
+                            </td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox" checked
+                                    style="pointer-events: none;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">Extra Item</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox"
+                                    style="pointer-events: none;"></td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;">Installation Warranty</td>
+                            <td style="padding:5px 10px; border-bottom: 1px solid black;"><input type="checkbox" checked
+                                    style="pointer-events: none;"></td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th colspan="4"
+                                style="padding: 10px; background-color: white; color: white; text-align: left;">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding:3px 10px;">Activ8 System Price</td>
+                            <td style="padding:3px 10px; border-right: 1px solid black;">€22336.44</td>
+                            <td style="padding:3px 10px;">Customer Price</td>
+                            <td style="padding:3px 10px;">€14038.08</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:3px 10px; white-space: nowrap;">Activ8 Customer Discount</td>
+                            <td style="padding:3px 10px; border-right: 1px solid black;">€6198.36</td>
+                            <td style="padding:3px 10px;">VAT</td>
+                            <td style="padding:3px 10px;">€0.00</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:3px 10px;">Grant</td>
+                            <td style="padding:3px 10px; border-right: 1px solid black;">€2100</td>
+                            <td style="padding:3px 10px;">Deposit</td>
+                            <td style="padding:3px 10px;">€3509.52</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:3px 10px; white-space: nowrap;">Finance (If applicable)</td>
+                            <td style="padding:3px 10px; border-right: 1px solid black;">€22336.44</td>
+                            <td style="padding:3px 10px;">Final Balance</td>
+                            <td style="padding:3px 10px;">€10528.56</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:15px 10px; color:#a3a4a3; white-space: nowrap;">All prices are 0% VAT
+                                rated</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items:center; padding: 30px 50px">
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <div style="width: 30em; height: 8px; display: flex;">
+                <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+                <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+                <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+                <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+                <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content:right;">
+            <div style="text-align: center; color: #484948; margin-right: 30px;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 4em;">
+            </div>
+            <div style="display: flex; flex-direction: column; width: 2px; height: 50px; margin-right: 30px;">
+                <div style="background-color: #da2127; height: 20%;"></div>
+                <div style="background-color: #e1432a; height: 20%;"></div>
+                <div style="background-color: #ee6f30; height: 20%;"></div>
+                <div style="background-color: #f78c2a; height: 20%;"></div>
+                <div style="background-color: #faad1a; height: 20%;"></div>
+            </div>
+            <div style="text-align: center; color: #484948;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 4em;">
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content:space-between;align-items:center; padding: 25px 30px 0px 80px">
+        <p style="text-transform: uppercase; font-size:3rem; font-weight:600; color:#a3a4a3; ">What Next</p>
+        <div style="display: flex; align-items: center; justify-content:right; margin:10px 5em 0px 5em ">
+            <div style="text-align: center; color: #484948; margin-right: 30px;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 3em; width: 5em;">
+            </div>
+            <div style="display: flex; flex-direction: column; width: 4px; height: 60px; margin-right: 30px;">
+                <div style="background-color: #da2127; height: 20%;"></div>
+                <div style="background-color: #e1432a; height: 20%;"></div>
+                <div style="background-color: #ee6f30; height: 20%;"></div>
+                <div style="background-color: #f78c2a; height: 20%;"></div>
+                <div style="background-color: #faad1a; height: 20%;"></div>
+            </div>
+            <div style="text-align: center; color: #484948;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 3em; width: 5em;">
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: 5em; margin-top:-1em">
+        <div style="width: 40em; height: 10px; display: flex;">
+            <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+            <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+            <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+        </div>
+    </div>
+    <div style="display: flex; align-items: center; padding:10px 100px">
+        <p>Date of order</p>
+        <div style="height: 2px; width: 65px; background-color:#a3a4a3; margin: 0px 10px"></div>
+        <p>Installation</p>
+    </div>
+    <div style="padding: 0px 0px 0px 80px;">
+        <p style="font-size: 1.4em; letter-spacing:0.1em; font-weight:600; color:#484948; margin:0;">WHAT HAPPENS NEXT
+            WITH ACTIV8</p>
+    </div>
+    <div style="display: flex; justify-content:center; align-items:center; padding:30px 40px 30px 50px;">
+        <div>
+            <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="logo" style="height: 4em; width: 4em;">
+        </div>
+        <div style="padding: 0px 30px;">
+            <p
+                style="text-transform:uppercase; font-size:1.35rem; font-weight:600; letter-spacing:0.2rem; color:#484948; margin:10px 0px;">
+                call from project manager
+            </p>
+            <div style="height:2px; width:100%; background-color:#a3a4a3;"></div>
+            <p
+                style="font-size:0.7rem; text-align:justify; word-spacing:0.08rem; letter-spacing:0.06rem; color:#726e6f;">
+                Your dedicated Activ8 Project Manager will follow up on your solar enquiry with a phone call
+                to confirm your information, grant eligibility, solar suitability and answer any questions you
+                may have about the Activ8 process.
+            </p>
+        </div>
+    </div>
+    <div
+        style="display: flex; justify-content:center; align-items:center; padding:0px 40px 30px 50px; margin-top:-1.4em;">
+        <div>
+            <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="logo" style="height: 4em; width: 4em;">
+        </div>
+        <div style="padding: 0px 30px;">
+            <p
+                style="text-transform:uppercase; font-size:1.35rem; font-weight:600; letter-spacing:0.2rem; color:#484948; margin:10px 0px;">
+                DESKTOP SURVEY
+            </p>
+            <div style="height:2px; width:100%; background-color:#a3a4a3;"></div>
+            <p
+                style="font-size:0.7rem; text-align:justify; word-spacing:0.08rem; letter-spacing:0.06rem; color:#726e6f;">
+                Following on from your enquiry, your Project Manager has conducted a desktop survey to
+                understand the feasibility of your home and how many panels you may be able to fit on your
+                roof and followed up with this quotation.
+            </p>
+        </div>
+    </div>
+    <div
+        style="display: flex; justify-content:center; align-items:center; padding:0px 40px 30px 50px; margin-top:-1.4em;">
+        <div>
+            <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="logo" style="height: 4em; width: 4em;">
+        </div>
+        <div style="padding: 0px 30px;">
+            <p
+                style="text-transform:uppercase; font-size:1.35rem; font-weight:600; letter-spacing:0.2rem; color:#484948; margin:10px 0px;">
+                AGREEMENT & CONTRACT
+            </p>
+            <div style="height:2px; width:100%; background-color:#a3a4a3;"></div>
+            <p
+                style="font-size:0.7rem; text-align:justify; word-spacing:0.08rem; letter-spacing:0.06rem; color:#726e6f;">
+                If you decide to proceed with this quotation, your Project Manager will send you a full
+                contract. Upon signing and securing your installation with a deposit, Johanna will start the
+                process of your SEAI grant (if eligible) and pass your details to our Technical Survey team.
+            </p>
+        </div>
+    </div>
+    <div
+        style="display: flex; justify-content:center; align-items:center; padding:0px 40px 30px 50px; margin-top:-1.4em;">
+        <div>
+            <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="logo" style="height: 4em; width: 4em;">
+        </div>
+        <div style="padding: 0px 30px;">
+            <p
+                style="text-transform:uppercase; font-size:1.35rem; font-weight:600; letter-spacing:0.2rem; color:#484948; margin:10px 0px;">
+                TECHNICAL CHECK
+            </p>
+            <div style="height:2px; width:100%; background-color:#a3a4a3;"></div>
+            <p
+                style="font-size:0.7rem; text-align:justify; word-spacing:0.08rem; letter-spacing:0.06rem; color:#726e6f;">
+                Your Project Manager will arrange for a solar survey engineer to call to your home and
+                conduct a full technical survey. Full pick list and RAMS will be put together for our
+                Installation Department so that your installation will be as seamless as possible.
+            </p>
+        </div>
+    </div>
+    <div
+        style="display: flex; justify-content:center; align-items:center; padding:0px 40px 30px 50px; margin-top:-1.4em;">
+        <div>
+            <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="logo" style="height: 4em; width: 4em;">
+        </div>
+        <div style="padding: 0px 30px;">
+            <p
+                style="text-transform:uppercase; font-size:1.35rem; font-weight:600; letter-spacing:0.2rem; color:#484948; margin:10px 0px;">
+                INSTALLATION
+            </p>
+            <div style="height:2px; width:100%; background-color:#a3a4a3;"></div>
+            <p
+                style="font-size:0.7rem; text-align:justify; word-spacing:0.08rem; letter-spacing:0.06rem; color:#726e6f;">
+                Your dedicated Activ8 Project Manager will organise for our Installation Department to book
+                in your installation. Your Activ8 crew will have two electricians and two roofers on-site to
+                install your new Activ8 solar PV system in just one day.
+            </p>
+        </div>
+    </div>
+    <div
+        style="display: flex; justify-content:center; align-items:center; padding:0px 40px 30px 50px; margin-top:-1.4em;">
+        <div>
+            <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="logo" style="height: 4em; width: 4em;">
+        </div>
+        <div style="padding: 0px 30px;">
+            <p
+                style="text-transform:uppercase; font-size:1.35rem; font-weight:600; letter-spacing:0.2rem; color:#484948; margin:10px 0px;">
+                SOLAR SAVINGS
+            </p>
+            <div style="height:2px; width:100%; background-color:#a3a4a3;"></div>
+            <p
+                style="font-size:0.7rem; text-align:justify; word-spacing:0.08rem; letter-spacing:0.06rem; color:#726e6f;">
+                Your dedicated Activ8 Project Manager will still be there for you after installation, help you
+                with any referrals and any other enquiries you may have. Other than that, it's time for you to
+                enjoy your solar savings, safe in the knowledge that we'll be there if you need us.
+            </p>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items:center; padding: 30px 50px">
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <div style="width: 30em; height: 10px; display: flex;">
+                <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+                <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+                <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+                <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+                <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content:right;">
+            <div style="text-align: center; color: #484948; margin-right: 30px;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 4em;">
+            </div>
+            <div style="display: flex; flex-direction: column; width: 4px; height: 50px; margin-right: 30px;">
+                <div style="background-color: #da2127; height: 20%;"></div>
+                <div style="background-color: #e1432a; height: 20%;"></div>
+                <div style="background-color: #ee6f30; height: 20%;"></div>
+                <div style="background-color: #f78c2a; height: 20%;"></div>
+                <div style="background-color: #faad1a; height: 20%;"></div>
+            </div>
+            <div style="text-align: center; color: #484948;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 4em;">
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content:space-between;align-items:center; padding: 0px 30px 0px 80px">
+        <p style="text-transform: uppercase; font-size:3rem; font-weight:600; color:#a3a4a3; letter-spacing:0.1em">
+            Timeline</p>
+        <div style="display: flex; align-items: center; justify-content:right; margin:10px 5em 0px 5em ">
+            <div style="text-align: center; color: #484948; margin-right: 30px;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 3em; width: 5em;">
+            </div>
+            <div style="display: flex; flex-direction: column; width: 4px; height: 60px; margin-right: 30px;">
+                <div style="background-color: #da2127; height: 20%;"></div>
+                <div style="background-color: #e1432a; height: 20%;"></div>
+                <div style="background-color: #ee6f30; height: 20%;"></div>
+                <div style="background-color: #f78c2a; height: 20%;"></div>
+                <div style="background-color: #faad1a; height: 20%;"></div>
+            </div>
+            <div style="text-align: center; color: #484948;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 3em; width: 5em;">
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 3.1em; margin-top:-1em">
+        <div style="width: 20em; height: 10px; display: flex;">
+            <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+            <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+            <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+        </div>
+    </div>
+    <div style="display: flex;  align-items:center; padding:0px 40px 20px 50px">
+        <div>
+            <p
+                style="text-transform:uppercase;font-size:1.2rem; letter-spacing:0.1rem; font-weight: semibold; color:#a3a4a3">
+                Week</p>
+        </div>
+        <div style="width: 100%; padding:0px 20px 0px 30px">
+            <p></p>
+            <div style="height:2px; width:100%; background-color:#a3a4a3"></div>
+            <div style="display: flex; justify-content:space-around; padding-top:3px;">
+                <span style="font-size:0.8rem; color:#484948">1</span>
+                <span style="font-size:0.8rem; color:#484948">2</span>
+                <span style="font-size:0.8rem; color:#484948">3</span>
+                <span style="font-size:0.8rem; color:#484948">4</span>
+                <span style="font-size:0.8rem; color:#484948">5</span>
+                <span style="font-size:0.8rem; color:#484948">6</span>
+                <span style="font-size:0.8rem; color:#484948">7</span>
+                <span style="font-size:0.8rem; color:#484948">8</span>
+                <span style="font-size:0.8rem; color:#484948">9</span>
+                <span style="font-size:0.8rem; color:#484948">10</span>
+                <span style="font-size:0.8rem; color:#484948">11</span>
+                <span style="font-size:0.8rem; color:#484948">12</span>
+                <span style="font-size:0.8rem; color:#484948">13</span>
+                <span style="font-size:0.8rem; color:#484948">14</span>
+                <span style="font-size:0.8rem; color:#484948">15</span>
+                <span style="font-size:0.8rem; color:#484948">16</span>
+            </div>
+        </div>
+    </div>
+    <div style="padding:0px 35px 20px 25px; ">
+        <div style="background-color: #fdeed2;border-radius:20px; padding:20px; display:flex; align-items:center">
+            <p style="font-size: 1.03rem; width:10%; text-align:center; color:#f9ad1b;padding:0px 10px 0px 0px">Admin &
+                CRM
+            </p>
+            <div style="position: relative; width: 100%;">
+                <div
+                    style="height:2px; width:100%; background-color:#a2948e; position: absolute; top: 50%; transform: translateY(-50%);">
+                </div>
+                <div
+                    style="height: 50px; width:20%; background-color:#f9b32d; opacity:0.9; border-radius:20px; position: absolute; top: 50%; transform: translateY(-50%); margin-left:5px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding:0px 35px 20px 25px; ">
+        <div style="background-color: #fde8d4;border-radius:20px; padding:20px; display:flex; align-items:center">
+            <p style="font-size: 1.03em; width:10%; text-align:center;color:#f98b27; padding:0px 10px 0px 0px"> Grant
+                Application</p>
+            <div style="position: relative; width: 100%;">
+                <div
+                    style="height:2px; width:100%; background-color:#a2948e; position: absolute; top: 50%; transform: translateY(-50%);">
+                </div>
+                <div
+                    style="height: 50px; width:50%; background-color:#f99438;opacity:0.9; border-radius:20px; position: absolute; top: 50%; transform: translateY(-50%); margin-left: calc(100% / 16);">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding:0px 35px 20px 25px; ">
+        <div style="background-color: #fde0d5;border-radius:20px; padding:20px; display:flex; align-items:center">
+            <p style="font-size: 1.03rem; width:10%; text-align:center;color:#f9652c; padding:0px 10px 0px 0px">
+                Technical
+                Survey</p>
+            <div style="position: relative; width: 100%;">
+                <div
+                    style="height:2px; width:100%; background-color:#a2948e; position: absolute; top: 50%; transform: translateY(-50%);">
+                </div>
+                <div
+                    style="height: 50px; width:25%; background-color:#f9713d;opacity:0.9; border-radius:20px; position: absolute; top: 50%; transform: translateY(-50%); margin-left: calc((100% / 16) * 6);">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding:0px 35px 20px 25px; ">
+        <div style="background-color: #fddcd3;border-radius:20px; padding:20px; display:flex; align-items:center">
+            <p style="font-size: 1.03rem; width:10%; text-align:center;color:#f94e20; padding:0px 10px 0px 0px">Internal
+                Survey Sign-off</p>
+            <div style="position: relative; width: 100%;">
+                <div
+                    style="height:2px; width:100%; background-color:#a2948e; position: absolute; top: 50%; transform: translateY(-50%);">
+                </div>
+                <div
+                    style="height: 50px; width:25%; background-color:#f95c32;opacity:0.9; border-radius:20px; position: absolute; top: 50%; transform: translateY(-50%); margin-left: calc((100% / 16) * 8);">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding:0px 35px 20px 25px; ">
+        <div style="background-color: #fdd6d2;border-radius:20px; padding:20px; display:flex; align-items:center">
+            <p style="font-size: 1.03rem; width:10%; text-align:center;color:#f9301c; padding:0px 10px 0px 0px">RAMS
+                Statement</p>
+            <div style="position: relative; width: 100%;">
+                <div
+                    style="height:2px; width:100%; background-color:#a2948e; position: absolute; top: 50%; transform: translateY(-50%);">
+                </div>
+                <div
+                    style="height: 50px; width:25%; background-color:#f9402e;opacity:0.9; border-radius:20px; position: absolute; top: 50%; transform: translateY(-50%); margin-left: calc((100% / 16) * 11);">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding:0px 35px 20px 25px; ">
+        <div style="background-color: #f7d3d4;border-radius:20px; padding:20px; display:flex; align-items:center">
+            <p style="font-size: 1.03rem; width:10%; text-align:center;color:#da2127; padding:0px 10px 0px 0px">Pick
+                List & Installation</p>
+            <div style="position: relative; width: 100%;">
+                <div
+                    style="height:2px; width:100%; background-color:#a2948e; position: absolute; top: 50%; transform: translateY(-50%);">
+                </div>
+                <div
+                    style="height: 50px; width:18%; background-color:#dc3338;opacity:0.9; border-radius:20px; position: absolute; top: 50%; transform: translateY(-50%); margin-left: calc((100% / 16) * 13);">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding-top: 30px; display: flex; justify-content: center; align-items: center;">
+        <div style="width: 80%; height: 10px; display: flex;">
+            <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+            <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+            <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content:space-between;align-items:center; padding: 50px 30px 0px 80px">
+        <p style="text-transform: uppercase; font-size:2.5rem; font-weight:600; color:#a3a4a3; letter-spacing:0.08em">
+            Your Team</p>
+        <div style="display: flex; align-items: center; justify-content:right; margin:10px 5em 0px 5em ">
+            <div style="text-align: center; color: #484948; margin-right: 30px;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2.5em; width: 4em;">
+            </div>
+            <div style="display: flex; flex-direction: column; width: 4px; height: 45px; margin-right: 30px;">
+                <div style="background-color: #da2127; height: 20%;"></div>
+                <div style="background-color: #e1432a; height: 20%;"></div>
+                <div style="background-color: #ee6f30; height: 20%;"></div>
+                <div style="background-color: #f78c2a; height: 20%;"></div>
+                <div style="background-color: #faad1a; height: 20%;"></div>
+            </div>
+            <div style="text-align: center; color: #484948;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2.5em; width: 4em;">
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 3.1em; margin-top:-1em">
+        <div style="width: 25em; height: 10px; display: flex;">
+            <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+            <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+            <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+        </div>
+    </div>
+    <div style="display:flex; align-items:center; padding: 30px 60px;">
+        <div style="padding-right:40px; ">
+            <div
+                style="display: inline-block; border-radius: 20px; background: linear-gradient(to right, #cc3635, #eeaf44);">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Image"
+                    style="display: block; border-radius: 20px; width: 230px; height: 230px; border: 1px solid transparent;  ">
+            </div>
+        </div>
+        <div style="height: 200px; width: 10px; background-color: #a3a4a3;"></div>
+        <div style="padding:0px 30px 0px 40px; text-align:left">
+            <p style="color: #484948; font-size: 1em; font-weight:600">JOHANNA NOLAN</p>
+            <p style="color: #f38a21; font-size: 1em; font-weight:400;margin:-5px 0px;">Project Manager</p>
+            <p style="color: #6c6d70; font-size: 0.9em;">
+                Johanna is your dedicated Project Manager and will assist you through every step of your Activ8 journey
+                — from grant, to survey right through to installation and will not stop working for you until your solar
+                is installed. After install? She's still there for you if you need her
+            </p>
+            <p style=" text-transform:uppercase; color: #ef6e31; font-size: 1em; text-align:center">FROM START TO FINISH
+                AND BEYOND</p>
+        </div>
+    </div>
+    <div style="padding:5px 0px 10px 0px; display: flex; justify-content: center; align-items: center;">
+        <div style="width: 80%; height: 10px; display: flex;">
+            <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+            <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+            <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+        </div>
+    </div>
+    <div>
+        <p style="text-align: center;">Our team will be with you all the way</p>
+    </div>
+    <div style="display:flex; align-items:center; padding: 30px 60px;">
+        <div style="padding:0px 30px 0px 30px; ">
+            <div
+                style="display: inline-block; border-radius: 20px; background: linear-gradient(to right, #cc3635, #eeaf44);">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Image"
+                    style="display: block; border-radius: 20px; width: 300px; height: 180px; border: 1px solid transparent;  ">
+            </div>
+        </div>
+        <div style="padding-right:30px; text-align:left">
+            <p style="color: #484948; font-size: 1em; font-weight:600">SURVEY INSPECTION TEAM</p>
+            <p style="color: #6c6d70; font-size: 0.9em;">
+                After your Technical Survey has taken place and all photos and technical drawings have been recorded,
+                these documents are double checked by our Internal Survey Inspection Team for quality purposes and to
+                make sure your home can proceed forward for installation.
+            </p>
+        </div>
+    </div>
+    <div style="display:flex; align-items:center; padding: 0px 60px;">
+        <div style="padding:0px 30px 0px 30px; text-align:left">
+            <p style="color: #484948; font-size: 1em; font-weight:600">CUSTOMER SUPPORT TEAM</p>
+            <p style="color: #6c6d70; font-size: 0.9em;">
+                After your installation has been completed, we are still here for you. Our dedicated Customer Support
+                Team are there for any questions you may have about how your system works and how to get the most of out
+                your solar panels.
+            </p>
+        </div>
+        <div style="padding-right:30px; ">
+            <div
+                style="display: inline-block; border-radius: 20px; background: linear-gradient(to right, #cc3635, #eeaf44);">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Image"
+                    style="display: block; border-radius: 20px; width: 300px; height: 180px; border: 1px solid transparent;  ">
+            </div>
+        </div>
+    </div>
+    <div style="padding: 10px 50px; text-align:center;">
+        <p style="line-height: 1.3rem; font-weight:600; color:#ef6e31; letter-spacing:0.13rem">YOUR DEDICATED POST INSTALL <br> CUSTOMER SUPPORT CREW</p>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items:center; padding: 0px 50px">
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <div style="width: 30em; height: 10px; display: flex;">
+                <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+                <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+                <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+                <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+                <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content:right;">
+            <div style="text-align: center; color: #484948; margin-right: 30px;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 4em;">
+            </div>
+            <div style="display: flex; flex-direction: column; width: 4px; height: 45px; margin-right: 30px;">
+                <div style="background-color: #da2127; height: 20%;"></div>
+                <div style="background-color: #e1432a; height: 20%;"></div>
+                <div style="background-color: #ee6f30; height: 20%;"></div>
+                <div style="background-color: #f78c2a; height: 20%;"></div>
+                <div style="background-color: #faad1a; height: 20%;"></div>
+            </div>
+            <div style="text-align: center; color: #484948;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 4em;">
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center; padding: 50px 40px 0px 40px">
+        <p
+            style="text-transform: uppercase;word-spacing:0.15rem;line-height:1.3rem; font-size:1rem; color:#ef6e31; letter-spacing:0.08em">
+            WE ARE IRELAND'S LARGEST SOLAR INSTALLER
+            <br>
+            LEADING THE WAY IN QUALITY, HEALTH & SAFETY
+        </p>
+    </div>
+    <div style="display:flex; justify-content:left; padding-left:70px ">
+        <div
+            style="display: inline-block; border-radius: 20px; background: linear-gradient(to right, #cc3635, #eeaf44);">
+            <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="Image"
+                style="display: block; border-radius: 20px; width: 530px; height: 430px; border: 1px solid transparent;  ">
+        </div>
+    </div>
+    <div style="display:flex; justify-content:right; padding-right:70px; margin-top:10px ">
+        <div
+            style="display: inline-block; border-radius: 20px; background: linear-gradient(to right, #cc3635, #eeaf44);">
+            <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="Image"
+                style="display: block; border-radius: 20px; width: 530px; height: 430px; border: 1px solid transparent;  ">
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items:center; padding: 30px 50px">
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <div style="width: 30em; height: 10px; display: flex;">
+                <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+                <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+                <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+                <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+                <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content:right;">
+            <div style="text-align: center; color: #484948; margin-right: 30px;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 4em;">
+            </div>
+            <div style="display: flex; flex-direction: column; width: 4px; height: 45px; margin-right: 30px;">
+                <div style="background-color: #da2127; height: 20%;"></div>
+                <div style="background-color: #e1432a; height: 20%;"></div>
+                <div style="background-color: #ee6f30; height: 20%;"></div>
+                <div style="background-color: #f78c2a; height: 20%;"></div>
+                <div style="background-color: #faad1a; height: 20%;"></div>
+            </div>
+            <div style="text-align: center; color: #484948;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 4em;">
+            </div>
+        </div>
+    </div>
+        <div style="display: flex; justify-content:space-between;align-items:center; padding: 30px 30px 0px 80px">
+        <p style="text-transform: uppercase; font-size:2.5rem; font-weight:600; color:#a3a4a3; letter-spacing:0.08em">
+            Process</p>
+        <div style="display: flex; align-items: center; justify-content:right; margin:10px 5em 0px 5em ">
+            <div style="text-align: center; margin-right: 30px;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2.5em; width: 4em;">
+            </div>
+            <div style="display: flex; flex-direction: column; width: 4px; height: 45px; margin-right: 30px;">
+                <div style="background-color: #da2127; height: 20%;"></div>
+                <div style="background-color: #e1432a; height: 20%;"></div>
+                <div style="background-color: #ee6f30; height: 20%;"></div>
+                <div style="background-color: #f78c2a; height: 20%;"></div>
+                <div style="background-color: #faad1a; height: 20%;"></div>
+            </div>
+            <div style="text-align:center;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2.5em; width: 4em;">
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 3.1em; margin-top:-1em">
+        <div style="width: 25em; height: 10px; display: flex;">
+            <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+            <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+            <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+        </div>
+    </div>
+    <div style="display: flex;  align-items:center; padding:40px 50px 20px 60px ">
+        <div style="padding-right:50px;">
+            <div style="height: 1px; width:100%; background-color:#484948"></div>
+            <p style="color: #484948; font-size:1rem; font-weight:600">THE ACTIV8 PROCESS</p>
+            <p style="font-size: 0.8rem; color:#6d6d70; ">Amy from our Installations Department takes you through the
+                Activ8 solar process, step by step. From
+                administration, to grant works, to survey and installation
+            </p>
+            <p style="color: #6c6d70; font-style:italic; display: flex; align-items: center;">
+                Click the picture (right) to watch it...
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="25px" height="25px" fill="#FF0000"
+                    style="margin-left: 10px;">
+                    <path
+                        d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z" />
+                </svg>
+            </p>
+        </div>
+        <div>
+            <div style="width: 335px; height: 210px; position: relative; box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);">
+                <a href="https://www.youtube.com/watch?v=RwQhjKsD0gA" target="_blank" title="Watch on YouTube"
+                    style="display: block; width: 100%; height: 100%;">
+                    <img src="https://img.youtube.com/vi/RwQhjKsD0gA/0.jpg" alt="YouTube Thumbnail"
+                        style="width: 100%; height: 100%; object-fit:cover; cursor: pointer;">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex;  align-items:center; padding:20px 50px 20px 60px ">
+        <div style="padding-right:50px;">
+            <div style="height: 1px; width:100%; background-color:#484948"></div>
+            <p style="color: #484948; font-size:1rem; font-weight:600">HOW SOLAR WORKS</p>
+            <p style="font-size: 0.8rem; color:#6d6d70; ">
+                Our Activ8 animated video takes you through how solar PV works on your home, from generating DC
+                electricity on your roof, through each and every component that can be installed as part of your Activ8
+                solar PV system.
+            </p>
+            <p style="color: #6c6d70; font-style:italic; display: flex; align-items: center;">
+                Click the picture (right) to watch it...
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="25px" height="25px" fill="#FF0000"
+                    style="margin-left: 10px;">
+                    <path
+                        d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z" />
+                </svg>
+            </p>
+        </div>
+        <div>
+            <div style="width: 335px; height: 210px; position: relative; box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);">
+                <a href="https://www.youtube.com/watch?v=wzJFVlinJsU" target="_blank" title="Watch on YouTube"
+                    style="display: block; width: 100%; height: 100%;">
+                    <img src="https://img.youtube.com/vi/wzJFVlinJsU/0.jpg" alt="YouTube Thumbnail"
+                        style="width: 100%; height: 100%; object-fit:cover; cursor: pointer;">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div style="padding: 20px;">
+        <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="logo" style="height: 25em; width: 100%;">
+    </div>
+    <div style="display: flex; justify-content:space-between;align-items:center; padding: 20px 30px 0px 80px">
+        <p style="text-transform: uppercase; font-size:2.5rem; font-weight:600; color:#a3a4a3; letter-spacing:0.08em">
+            Customers
+        </p>
+        <div style="display: flex; align-items: center; justify-content:right; margin:10px 5em 0px 5em ">
+            <div style="text-align: center; margin-right: 30px;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2.5em; width: 4em;">
+            </div>
+            <div style="display: flex; flex-direction: column; width: 4px; height: 45px; margin-right: 30px;">
+                <div style="background-color: #da2127; height: 20%;"></div>
+                <div style="background-color: #e1432a; height: 20%;"></div>
+                <div style="background-color: #ee6f30; height: 20%;"></div>
+                <div style="background-color: #f78c2a; height: 20%;"></div>
+                <div style="background-color: #faad1a; height: 20%;"></div>
+            </div>
+            <div>
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2.5em; width: 4em;">
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 3.1em; margin-top:-1em">
+        <div style="width: 25em; height: 10px; display: flex;">
+            <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+            <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+            <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+        </div>
+    </div>
+    <div style="display: flex; padding:40px 50px 0px 50px; justify-content:space-between;">
+        <div>
+            <div>
+                <div style="display: flex; justify-content:left; align-items:center;">
+                    <div
+                        style="height: 30px; width:30px; background-color:#ffbfd8; display:flex; align-items:center; justify-content:center; border-radius:50%">
+                        <p style="font-size: 10px;">PC</p>
+                    </div>
+                    <div style="padding: 0px 10px;">
+                        <p style="font-size: 13px; font-weight:600">Patt Cassidy</p>
+                        <p style="font-size: 13px; margin-top:-10px">1 review</p>
+                    </div>
+                </div>
+                <div style="padding-right: 60px;">
+                    <p style="font-weight:600;  margin:0px">Solar Panel Installation</p>
+                    <p style="font-size: 11px; line-height:15px">Very professional installation, everything was checked
+                        and rechecked, everything was explained fully
+                        and questions were answered to total satisfaction. Installation took 6-7 hours (as advised)
+                        Activ8
+                        Team arrived on scheduled and left everything in perfect condition. Would recommend highly
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div style="display: flex; justify-content:left; align-items:center;">
+                    <div
+                        style="height: 30px; width:30px; background-color:#ffcf91; display:flex; align-items:center; justify-content:center; border-radius:50%">
+                        <p style="font-size: 10px;">KK</p>
+                    </div>
+                    <div style="padding: 0px 10px;">
+                        <p style="font-size: 13px; font-weight:600">Kevin Kavanagh</p>
+                        <p style="font-size: 13px; margin-top:-10px">19 review</p>
+                    </div>
+                </div>
+                <div style="padding-right: 60px;">
+                    <p style="font-weight:600;  margin:0px">100% Happy with Activ8</p>
+                    <p style="font-size: 11px; line-height:15px">
+                        I have to say full marks to Active8. <br> From salesman to installers all went perfectly. <br>
+                        Full
+                        marks to the installation team that arrived on time as promised. They were so polite, used all
+                        the
+                        safety gears and cordened off the area they were working in. They explained all about using the
+                        system
+                        in a very understanding way. Great team of men. <br> The solar panel started working straight
+                        away on a
+                        dull enough evening and today sunny outside but very cold the 9 panels are producing power. I am
+                        very happy with the professional way Activ8 done the business. One day on I am selling power
+                        back to the grid, Happy days <br> Many thanks to all at Activ8 great job well done
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <img src="https://images.pexels.com/photos/1078850/pexels-photo-1078850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 25em; width: 20em;">
+            </div>
+            <p
+                style="text-transform: uppercase; color:#da2127; text-align:center; font-weight:600;font-size:1.1rem; letter-spacing:0.1rem">
+                Ireland's Solar expert</p>
+        </div>
+    </div>
+    <div style="display: flex;align-items: center; padding: 0px 50px">
+        <div>
+            <div style="display: flex; justify-content:left; align-items:center;">
+                <div
+                    style="height: 30px; width:30px; background-color:#61C2A2; display:flex; align-items:center; justify-content:center; border-radius:50%">
+                    <p style="font-size: 10px; text-align:center">MO</p>
+                </div>
+                <div style="padding: 0px 10px;">
+                    <p style="font-size: 13px; font-weight:600">Moyra</p>
+                    <p style="font-size: 13px; margin-top:-10px">2 review</p>
+                </div>
+            </div>
+            <div style="padding-right: 60px;">
+                <p style="font-weight:600;  margin:0px">Friendly and Efficient</p>
+                <p style="font-size: 11px; line-height:15px">
+                    The whole process was very efficient from first contact to installation. On the day of the
+                    installation, the team sought the best solution for us and for the cables and all of the work was
+                    neat and tidy. They spent time with us to ensure that we fully understood the system.
+                </p>
+                <p style="font-weight: bold; font-size:10px;">Date of experience:
+                    <span style="font-weight: 400;">January 25, 2023</span>
+                </p>
+            </div>
+        </div>
+        <div>
+            <div style="display: flex; justify-content:left; align-items:center;">
+                <div
+                    style="height: 30px; width:30px; background-color:#B1A2CA; display:flex; align-items:center; justify-content:center; border-radius:50%">
+                    <p style="font-size: 10px;">PS</p>
+                </div>
+                <div style="padding: 0px 10px;">
+                    <p style="font-size: 13px; font-weight:600">Patrick Stewart</p>
+                    <p style="font-size: 13px; margin-top:-10px">1 review</p>
+                </div>
+            </div>
+            <div>
+                <p style="font-weight:600;  margin:0px">From first contact with the sales team...</p>
+                <p style="font-size: 11px; line-height:15px">
+                    From first contact with the sales team everything went well very informative and gave us all the
+                    information on the system also excellent support from the office kept us upto date, install date
+                    went like clockwork team arrived at 8am and completed by 1pm and up and running
+                </p>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; align-items:center; justify-content:space-between; padding:10px 50px">
+        <div>
+            <div style="display: flex; justify-content:left; align-items:center;">
+                <div
+                    style="height: 30px; width:30px; background-color:#8BD3E6; display:flex; align-items:center; justify-content:center; border-radius:50%">
+                    <p style="font-size: 10px; text-align:center">MT</p>
+                </div>
+                <div style="padding: 0px 10px;">
+                    <p style="font-size: 13px; font-weight:600">Mr T</p>
+                    <p style="font-size: 13px; margin-top:-10px">2 review</p>
+                </div>
+            </div>
+            <div style="padding-right: 60px;">
+                <p style="font-weight:600;  margin:0px">Precise and Friendly</p>
+                <p style="font-size: 11px; line-height:15px">
+                    We had our panels installed with them. They were very friendly and surprisingly precise. I expect
+                    small errors during such a complex process, but every detail clicked throughout the whole
+                    experience, and we never had to call back or fix mistakes. Wonderful service!
+                </p>
+                <p style="font-weight: bold; font-size:10px;">Date of experience:
+                    <span style="font-weight: 400;">December 09, 2022</span>
+                </p>
+            </div>
+        </div>
+        <div
+            style="width: 150px; height: 115px;padding:20px; background-color: #04da8d; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: flex; justify-content: center; align-items: center; color: black; font-size: 20px; font-weight: bold; margin:0px 70px">
+            "Excellent"
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items:center; padding: 10px 50px">
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <div style="width: 30em; height: 10px; display: flex;">
+                <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+                <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+                <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+                <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+                <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content:right;">
+            <div style="text-align: center; color: #484948; margin-right: 30px;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 4em;">
+            </div>
+            <div style="display: flex; flex-direction: column; width: 4px; height: 45px; margin-right: 30px;">
+                <div style="background-color: #da2127; height: 20%;"></div>
+                <div style="background-color: #e1432a; height: 20%;"></div>
+                <div style="background-color: #ee6f30; height: 20%;"></div>
+                <div style="background-color: #f78c2a; height: 20%;"></div>
+                <div style="background-color: #faad1a; height: 20%;"></div>
+            </div>
+            <div style="text-align: center; color: #484948;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 4em;">
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content:space-between;align-items:center; padding: 50px 30px 0px 80px">
+        <div style="display: flex; justify-content:left; flex-direction:column">
+            <div style="display: flex;">
+                <div
+                    style="height: 40px; width: 15px; background-image: linear-gradient(to right, #a9dfc1, #a0dfc0, #97debf, #8cdebe, #81ddbe); margin-right:2px">
+                </div>
+                <div
+                    style="height: 40px; width: 20px; background-image: linear-gradient(to right, #72ddbf, #64d9bf, #55d4c0, #44d0c1, #2ecbc2); margin-right:2px">
+                </div>
+                <div
+                    style="height: 40px; width: 40px; background-image: linear-gradient(to right, #24cdb8, #00abc5, #0084d0, #0059c8, #0a1e9d); margin-right:2px">
+                </div>
+            </div>
+            <p
+                style="margin-top:5px; font-size:15px; text-align:right;font-weight:600; color:#031374; letter-spacing:0.08em">
+                QCells
+            </p>
+        </div>
+        <div style="display: flex; align-items: center; justify-content:right; margin:0px 5em 0px 5em ">
+            <div style="text-align: center; margin-right: 30px;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2.5em; width: 4em;">
+            </div>
+            <div style="display: flex; flex-direction: column; width: 4px; height: 45px; margin-right: 30px;">
+                <div style="background-color: #da2127; height: 20%;"></div>
+                <div style="background-color: #e1432a; height: 20%;"></div>
+                <div style="background-color: #ee6f30; height: 20%;"></div>
+                <div style="background-color: #f78c2a; height: 20%;"></div>
+                <div style="background-color: #faad1a; height: 20%;"></div>
+            </div>
+            <div>
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2.5em; width: 4em;">
+            </div>
+        </div>
+    </div>
+    <div
+        style=" margin-top:3em; padding: 5px; color: white; background-image: linear-gradient(to right, #da2127, #e74d1f, #f07016, #f68f12, #faad1a); ">
+        <div style="text-align: center; ">
+            <p style="font-size:1.6rem; text-transform:uppercase; margin-top:5px">Q.peak duo blk m-g11</p>
+        </div>
+        <div style="display: flex; align-items: center; justify-content:space-around;">
+            <p style="font-size:1rem; ">108 cells | 20.8% efficiency</p>
+            <p style="font-size:1rem; font-weight:100; font-family:Helvetica Neue;">400w</p>
+            <p style="font-size:1rem;">Enduring high performance</p>
+        </div>
+    </div>
+    <div style="display: flex; justify-content:space-between; align-items:center; padding:30px 50px 0px 50px;">
+        <div style="padding: 30px 0px;">
+            <div style="padding:0px 30px;display: flex; align-items:center">
+                <div>
+                    <svg style="height: 2.2em; width: 2.2em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="#001c77"
+                            d="M384 160c-17.7 0-32-14.3-32-32s14.3-32 32-32H544c17.7 0 32 14.3 32 32V288c0 17.7-14.3 32-32 32s-32-14.3-32-32V205.3L342.6 374.6c-12.5 12.5-32.8 12.5-45.3 0L192 269.3 54.6 406.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160c12.5-12.5 32.8-12.5 45.3 0L320 306.7 466.7 160H384z" />
+                    </svg>
+                </div>
+                <div style="padding:0px 20px; color:#001c76;">
+                    <p style="font-size: 0.8rem; font-weight:bold">Breaking the 20% efficiency barrier</p>
+                    <p style="font-size: 0.8rem; margin-top:-5px;">Q.ANTUM DUO Z Technology with zero gap cell layout
+                        boosts module
+                        efficiency upto 20.8%.</p>
+                </div>
+            </div>
+            <div style="padding: 0px 30px;display: flex; align-items:center">
+                <div>
+                    <svg style="height: 2.2em; width: 2.2em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path fill="#001c77"
+                            d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0z" />
+                    </svg>
+                </div>
+                <div style="padding:0px 20px; color:#001c76;">
+                    <p style="font-size: 0.8rem; font-weight:bold">Enduring high performance</p>
+                    <p style="font-size: 0.8rem; margin-top:-5px;">Long-term yield security with Anti LeTID Technology,
+                        Anti PID Technology1 and Hot-Spot Protect.</p>
+                </div>
+            </div>
+            <div style="padding:0px 30px;display: flex; align-items:center">
+                <div>
+                    <svg style="height: 2.2em; width: 2.2em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path fill="#001c77"
+                            d="M0 224c0 53 43 96 96 96h47.2L290 202.5c17.6-14.1 42.6-14 60.2 .2s22.8 38.6 12.8 58.8L333.7 320H352h64c53 0 96-43 96-96s-43-96-96-96c-.5 0-1.1 0-1.6 0c1.1-5.2 1.6-10.5 1.6-16c0-44.2-35.8-80-80-80c-24.3 0-46.1 10.9-60.8 28C256.5 24.3 219.1 0 176 0C114.1 0 64 50.1 64 112c0 7.1 .7 14.1 1.9 20.8C27.6 145.4 0 181.5 0 224zm330.1 3.6c-5.8-4.7-14.2-4.7-20.1-.1l-160 128c-5.3 4.2-7.4 11.4-5.1 17.8s8.3 10.7 15.1 10.7h70.1L177.7 488.8c-3.4 6.7-1.6 14.9 4.3 19.6s14.2 4.7 20.1 .1l160-128c5.3-4.2 7.4-11.4 5.1-17.8s-8.3-10.7-15.1-10.7H281.9l52.4-104.8c3.4-6.7 1.6-14.9-4.2-19.6z" />
+                    </svg>
+                </div>
+                <div style="padding:0px 20px; color:#001c76;">
+                    <p style="font-size: 0.8rem; font-weight:bold">Extreme weather rating</p>
+                    <p style="font-size: 0.8rem; margin-top:-5px">High-tech aluminium alloy frame, certified for high
+                        snow
+                        (5400 Pa) and wind loads (3500 Pa).</p>
+                </div>
+            </div>
+            <div style="padding:0px 30px;display: flex; align-items:center">
+                <div>
+                    <svg style="height: 2.2em; width: 2.2em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                        <path fill="#001c77"
+                            d="M0 336c0 79.5 64.5 144 144 144H512c70.7 0 128-57.3 128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7 6.4-22.4 6.4-34.6c0-53-43-96-96-96c-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32C167.6 32 96 103.6 96 192c0 2.7 .1 5.4 .2 8.1C40.2 219.8 0 273.2 0 336z" />
+                    </svg>
+                </div>
+                <div style="padding:0px 20px; color:#001c76;">
+                    <p style="font-size: 0.8rem; font-weight:bold">Innovative all-weather technology</p>
+                    <p style="font-size: 0.8rem; margin-top:-5px">Optimal yields, whatever the weather with excellent
+                        low-light and temperature behavior.</p>
+                </div>
+            </div>
+            <div style="padding:0px 30px;display: flex; align-items:center">
+                <div>
+                    <svg style="height: 2.2em; width: 2.2em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                        < <path fill="#001c77"
+                            d="M416 176c0 97.2-93.1 176-208 176c-38.2 0-73.9-8.7-104.7-23.9c-7.5 4-16 7.9-25.2 11.4C59.8 346.4 37.8 352 16 352c-6.9 0-13.1-4.5-15.2-11.1s.2-13.8 5.8-17.9l0 0 0 0 .2-.2c.2-.2 .6-.4 1.1-.8c1-.8 2.5-2 4.3-3.7c3.6-3.3 8.5-8.1 13.3-14.3c5.5-7 10.7-15.4 14.2-24.7C14.7 250.3 0 214.6 0 176C0 78.8 93.1 0 208 0S416 78.8 416 176zM231.5 383C348.9 372.9 448 288.3 448 176c0-5.2-.2-10.4-.6-15.5C555.1 167.1 640 243.2 640 336c0 38.6-14.7 74.3-39.6 103.4c3.5 9.4 8.7 17.7 14.2 24.7c4.8 6.2 9.7 11 13.3 14.3c1.8 1.6 3.3 2.9 4.3 3.7c.5 .4 .9 .7 1.1 .8l.2 .2 0 0 0 0c5.6 4.1 7.9 11.3 5.8 17.9c-2.1 6.6-8.3 11.1-15.2 11.1c-21.8 0-43.8-5.6-62.1-12.5c-9.2-3.5-17.8-7.4-25.2-11.4C505.9 503.3 470.2 512 432 512c-95.6 0-176.2-54.6-200.5-129zM228 72c0-11-9-20-20-20s-20 9-20 20V86c-7.6 1.7-15.2 4.4-22.2 8.5c-13.9 8.3-25.9 22.8-25.8 43.9c.1 20.3 12 33.1 24.7 40.7c11 6.6 24.7 10.8 35.6 14l1.7 .5c12.6 3.8 21.8 6.8 28 10.7c5.1 3.2 5.8 5.4 5.9 8.2c.1 5-1.8 8-5.9 10.5c-5 3.1-12.9 5-21.4 4.7c-11.1-.4-21.5-3.9-35.1-8.5c-2.3-.8-4.7-1.6-7.2-2.4c-10.5-3.5-21.8 2.2-25.3 12.6s2.2 21.8 12.6 25.3c1.9 .6 4 1.3 6.1 2.1l0 0 0 0c8.3 2.9 17.9 6.2 28.2 8.4V280c0 11 9 20 20 20s20-9 20-20V266.2c8-1.7 16-4.5 23.2-9c14.3-8.9 25.1-24.1 24.8-45c-.3-20.3-11.7-33.4-24.6-41.6c-11.5-7.2-25.9-11.6-37.1-15l-.7-.2c-12.8-3.9-21.9-6.7-28.3-10.5c-5.2-3.1-5.3-4.9-5.3-6.7c0-3.7 1.4-6.5 6.2-9.3c5.4-3.2 13.6-5.1 21.5-5c9.6 .1 20.2 2.2 31.2 5.2c10.7 2.8 21.6-3.5 24.5-14.2s-3.5-21.6-14.2-24.5c-6.5-1.7-13.7-3.4-21.1-4.7V72z" />
+                    </svg>
+                </div>
+                <div style="padding:0px 20px; color:#001c76;">
+                    <p style="font-size: 0.8rem; font-weight:bold">A reliable investment</p>
+                    <p style="font-size: 0.8rem; margin-top:-5px">Inclusive 12-year product warranty and 25-year linear
+                        performance warranty2.</p>
+                </div>
+            </div>
+            <div style="padding:0px 30px;display: flex; align-items:center">
+                <div>
+                    <svg style="height: 2.2em; width: 2.2em;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                        fill="#001c77" stroke="#001c77">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M23 1v18h-3v-1h2V2H2v16h8v1H1V1zm-7 2H8v1h8zm-2 3V5h-4v1zm-7 5H3v1h4zm0 2H3v1h4zm-4 3h2v-1H3zm14-3a2 2 0 1 1-2-2 2.002 2.002 0 0 1 2 2zm-1 0a1 1 0 1 0-1 1 1.001 1.001 0 0 0 1-1zm.002-4.293a.965.965 0 0 0 1.32.55 1.08 1.08 0 0 1 1.213.207 1.066 1.066 0 0 1 .21 1.21.966.966 0 0 0 .548 1.324 1.064 1.064 0 0 1 0 2.004.965.965 0 0 0-.549 1.323A1.05 1.05 0 0 1 18 16.816v7.046l-3-2.538-3 2.538v-7.046a1.05 1.05 0 0 1-.744-1.49.965.965 0 0 0-.549-1.324 1.064 1.064 0 0 1 0-2.004.966.966 0 0 0 .549-1.324 1.066 1.066 0 0 1 .209-1.21 1.08 1.08 0 0 1 1.212-.206.965.965 0 0 0 1.32-.551 1.064 1.064 0 0 1 2.005 0zm.998 13v-5.04a.93.93 0 0 0-.998.625 1.064 1.064 0 0 1-2.004 0 .93.93 0 0 0-.998-.625v5.039l2-1.692zm-1.94-4.749a1.967 1.967 0 0 1 1.853-1.308 2.12 2.12 0 0 1 .87.197l.058-.091a1.964 1.964 0 0 1 1.116-2.695v-.122a1.966 1.966 0 0 1-1.116-2.695l-.087-.084a1.965 1.965 0 0 1-2.694-1.117h-.12a1.965 1.965 0 0 1-2.694 1.117l-.087.084a1.966 1.966 0 0 1-1.116 2.695v.122a1.964 1.964 0 0 1 1.116 2.695l.058.09a2.12 2.12 0 0 1 .87-.196 1.967 1.967 0 0 1 1.853 1.308L15 17z">
+                            </path>
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div style="padding:0px 20px; color:#001c76;">
+                    <p style="font-size: 0.8rem; font-weight:bold">The most thorough testing programme
+                        in the industry</p>
+                    <p style="font-size: 0.8rem; margin-top:-5px">Qcells is the first solar module manufacturer to pass
+                        the most comprehensive quality programme in the industry: The new “Quality Controlled PV” of the
+                        independent certification institute TÜV Rheinland.</p>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top:0em; width:100%">
+            <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="logo" style="height: 20em; width: 100%;">
+            <div style="text-align: center;">
+                <p style="color: #919699;">1692mm x 1134mm x 30mm </p>
+                <p
+                    style="background: linear-gradient(90deg, #6bc1ab, #044084); background-clip: text; -webkit-text-fill-color: transparent; font-weight:600; font-size:1.2rem">
+                    Q.PEAK DUO BLK SERIES</p>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content:space-around; align-items:center; padding: 0px 50px">
+        <div>
+            <p style="text-align: left; color:#001c76;">The ideal solution for</p>
+            <div style="padding:0px 30px 0px 0px;display: flex; align-items:center">
+                <div>
+                    <svg style="height: 2em; width: 2em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="#001c77"
+                            d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
+                    </svg>
+                </div>
+                <div style="padding:0px 20px; color:#001c76;">
+                    <p style="font-size: 0.8rem; font-weight:bold">Rooftop arrays on
+                        residential buildings</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div style="display:flex; justify-content:space-around">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 2em;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 2em;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 2em;">
+                <img src="https://images.pexels.com/photos/26312401/pexels-photo-26312401/free-photo-of-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="logo" style="height: 2em; width: 2em;">
+            </div>
+            <div style="margin-top: 10px;">
+                <p style="font-size: 6px; color:#001c76;">1. APT test conditions according to IEC / TS 62804-1:2015,
+                    method A (-1500 V, 96 h)</p>
+                <p style="font-size: 6px; color:#001c76; margin-top:-3px">2. See data sheet on rear for further
+                    information.</p>
+                <p
+                    style="background: linear-gradient(90deg, #6bc1ab, #044084); background-clip: text; -webkit-text-fill-color: transparent; font-weight:600; font-size:1rem">
+                    Engineered in Germany</p>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content:center; padding-top: 40px">
+        <div style="width: 80%; height: 10px; display: flex;">
+            <div style="width: 20%; height: 100%; background-color: #da2127;"></div>
+            <div style="width: 20%; height: 100%; background-color: #e1432a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #ee6f30;"></div>
+            <div style="width: 20%; height: 100%; background-color: #f78c2a;"></div>
+            <div style="width: 20%; height: 100%; background-color: #faad1a;"></div>
+        </div>
+    </div>
+</body>
+
+                </html>
+            `;
+
+            const response = await fetch('/generate-pdf', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ htmlContent }),
+            });
+
+            if (response.ok) {
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'output.pdf';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            } else {
+                alert('Failed to generate PDF');
+            }
+        });
+    </script>
+</body>
+
+</html>
